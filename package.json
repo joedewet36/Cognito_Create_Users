@@ -1,0 +1,23 @@
+{
+  "name": "cognito_create_users",
+  "version": "1.0.0",
+  "description": "",
+  "main": "cognitoAddUsers.js",
+  "scripts": {
+    "start": "node cognitoAddUsers.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack"
+  },
+  "author": "Joe de Wet",
+  "license": "ISC",
+  "devDependencies": {
+    "json-loader": "^0.5.7",
+    "webpack": "^4.30.0"
+  },
+  "dependencies": {
+    "amazon-cognito-identity-js": "^3.0.11",
+    "aws-sdk": "^2.439.0",
+    "nano": "^8.0.1",
+    "sync-mysql": "^3.0.1"
+  }
+}
