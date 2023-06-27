@@ -1,9 +1,9 @@
-    require('./config/config');
+    require('./config');
     const cloudant = require('./cloudant_nano');
     const helper = require('./helper');
     const options = {
-      UserPoolId: 'eu-west-1_xS5gXVT2i', // We can make this configurable
-      ClientId: '3ggj947qgflgvtlk27tt6n6kbh' // We can make this configurable
+      UserPoolId: '{Cognito User Pool ID}', // We can make this configurable
+      ClientId: '{Cognito ClientID}' // We can make this configurable
     };
 
     const AmazonCognitoIdentity = require('amazon-cognito-identity-js');
@@ -12,9 +12,9 @@
     const AWS = require('aws-sdk');
     var CognitoIdentityServiceProvider = new AWS.CognitoIdentityServiceProvider(options);
     AWS.config.update({
-      region: 'eu-west-1',
-      accessKeyId: "AKIARSR4MO5EUNDMF46L",
-      secretAccessKey: "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"
+      region: aws_region,
+      accessKeyId: aws_accesskey ,
+      secretAccessKey: "{AWS secretAccessKey}"
     });
     var getUserPool = async function (options) {
       if (!userPool) {
@@ -27,7 +27,7 @@
       var defaultPwd = Math.random().toString(36).slice(-8) + helper.randomCapsString(1) + helper.randomSymbol(1) + helper.randomNumberString(1);
       if(isAdmin){
 
-        defaultPwd = 'cl0udh1R3!';
+        defaultPwd = '{adminPw}';
       }
       
       let currentTime = Math.floor(new Date().getTime() / 1000);
